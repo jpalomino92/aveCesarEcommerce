@@ -105,18 +105,5 @@ console.log("El subtotal es : $" + subTotal);
 console.log("El valor con el IVA agregado es : $ "+ iva);
 console.log("El total es de: $" + total);
 
-/*we order and print the object */
 
-productArray.sort(function (a, b) {
-    if (a.price > b.price) {
-      return 1;
-    }
-    if (a.price < b.price) {
-      return -1;
-    }
-    // a must be equal to b
-    return 0;
-  });
-
-console.log(JSON.stringify(productArray));
 

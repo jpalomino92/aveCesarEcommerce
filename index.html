@@ -31,7 +31,7 @@
                     </li>
                     <li>
                         <i class="fas fa-cart-plus nav-icon"></i>
-                        <div class="cart-items">0</div>
+                        <div class="cart-items" id="cart-items">0</div>
                     </li>
                   </ul>
             </div>
@@ -46,7 +46,20 @@
     <section class="section featured">
       <div class="title">
         <h1>Featured Products</h1>
-      </div>
+        <form id="form">
+            <label for="fname">Product name:</label>
+            <input type="text" id="inputName"><br><br>
+            <label for="lname">Product Price:</label>
+            <input type="text" id="inputPrice"><br><br>
+        </form>
+        <button id="buttonAdd">agregar producto</button>
+        <button id="buttonClear">Borrar productos</button>
+        <button id="buttonShow">Revelar Lista</button>
+        <button id="buttonEmpty">Vaciar Lista</button>
+
+
+
+    </div>
     </section>
     <!--Latest -->
     <section class="section featured">
@@ -55,6 +68,9 @@
         </div>
     </section>
     <!-- Product Banner -->
+    <div id="productList">
+
+    </div>
     <section>
 
     </section>
