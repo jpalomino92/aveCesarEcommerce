@@ -1,19 +1,17 @@
-import logo from './logo.svg';
+import React from 'react';
+///import { Divider } from 'semantic-ui-react';
 import './App.css';
+//components
+import NavBar from './components/NavBar/NavBar'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          this is a test
-        </p>
-
-
-      </header>
+class App extends React.Component{
+  render(){
+    return (
+    <div>
+      <NavBar />
     </div>
-  );
-}
+      );
+  };
+};
 
 export default App;
