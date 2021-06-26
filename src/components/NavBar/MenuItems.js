@@ -18,10 +18,5 @@ export const MenuItems =[
         title: 'Contact Us',
         url: '#',
         cName: 'navLinks'
-    },
-    {
-        title: 'Sing Up',
-        url: '#',
-        cName: 'navLinks-mobile'
-    },
+    }
 ]
