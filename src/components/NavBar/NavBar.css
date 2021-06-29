@@ -32,10 +32,10 @@
     margin-right: 2rem;
 }
 
-.navLinks{
-    color: white;
-    text-decoration:none;
-    padding: 0.5rem 1rem;
+#navLinks {
+    color: white ;
+    text-decoration:none  ;
+    padding: 0.5rem 1rem ;
 }
 
 .navLinks:hover{

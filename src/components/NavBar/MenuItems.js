@@ -12,7 +12,7 @@ export const MenuItems =[
     {
         title: 'Products',
         url: '#',
-        cName: 'navLinks'
+        cName: 'navLinks dropdown'
     },
     {
         title: 'Contact Us',
