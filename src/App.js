@@ -3,7 +3,7 @@ import React from 'react';
 import './App.css';
 //components
 import NavBar from './components/NavBar/NavBar';
-import { ItemListContainer } from './components/container/ItemListContainer';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 
 const head = "Ave Cesar Ecommerce";
 
@@ -14,6 +14,7 @@ class App extends React.Component{
     <div>
       <NavBar />
       <ItemListContainer  head = {head}/>
+
     </div>
     
       );
