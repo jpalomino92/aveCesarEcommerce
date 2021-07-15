@@ -1,5 +1,8 @@
 import {React,useState } from 'react';
 import { Button ,Icon} from 'semantic-ui-react';
+import './buttonCounter.css'
+
+
 
 
 export default function ButtonCounter ({onAdd}) {
@@ -22,21 +25,20 @@ export default function ButtonCounter ({onAdd}) {
 
 
   return(
-    <div>
-      <Button animated='vertical' onClick={()=> onAdd(quantity)}>
-        <Button.Content hidden >Buy</Button.Content>
-        <Button.Content visible>
-          <Icon name='shop' />
-        </Button.Content>
-      </Button>
+    <div className="ButtonCounter">
 
-    <Button.Group>
-      <Button positive onClick={handleDecrement}>-</Button>
-      <Button.Or text={quantity} />
-      <Button onClick={handleIncrement}>+</Button>
-      
-      
-    </Button.Group>
+        <Button animated='vertical' onClick={()=> onAdd(quantity)}>
+          <Button.Content hidden >Buy</Button.Content>
+          <Button.Content visible>
+            <Icon name='shop' />
+          </Button.Content>
+        </Button>
+
+      <Button.Group>
+        <Button positive onClick={handleDecrement}>-</Button>
+        <Button.Or text={quantity} />
+        <Button onClick={handleIncrement}>+</Button>        
+      </Button.Group>
 
     </div>
   )

@@ -1,5 +1,6 @@
 import React ,{useState}from 'react'; 
-import {Card} from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import {Card, Grid} from 'semantic-ui-react';
 import ButtonCounter from '../buttonCounter/buttonCounter';
 
 
@@ -11,7 +12,6 @@ function Item({item,key,detail}) {
     
     const onAdd = (quantity) => {
         setCantidad(quantity);
-        console.log(cantidad)
     } 
 
     const extra = (
@@ -22,13 +22,18 @@ function Item({item,key,detail}) {
 
     return (
         <div >
-            <Card
-                href = {`/Products/${id}`}
-                image= {image}
-                header={title}
-                meta= {category}
-                extra={extra}
-            />
+            <Link to = {`/Products/${id}`} >
+                <Card
+                    
+                    image= {image}
+                    header={title}
+                    meta= {category}
+                />
+            </Link>
+           
+           <ButtonCounter  onAdd={onAdd}/>
+
+
                         
         </div>
     )

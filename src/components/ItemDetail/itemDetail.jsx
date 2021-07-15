@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState}from 'react'; 
 import {Card, Grid} from 'semantic-ui-react';
 import ButtonCounter from '../buttonCounter/buttonCounter';
 
@@ -6,10 +6,16 @@ import ButtonCounter from '../buttonCounter/buttonCounter';
 export default function ItemDetail({OnlyItem}) {
 
     const  {image,title,category} = OnlyItem
+    const [cantidad, setCantidad] = useState(0)
+
+
+    const onAdd = (quantity) => {
+        setCantidad(quantity);
+    } 
 
     const extra = (
         <a>
-        <ButtonCounter />
+        <ButtonCounter onAdd={onAdd}/>
         </a>
     )
 
