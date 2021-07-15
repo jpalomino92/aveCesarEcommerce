@@ -1,46 +1,28 @@
-import {React,useState, useEffect } from 'react';
-import { Card , Grid} from 'semantic-ui-react';
-import ButtonExampleConditionalsCustom from '../buttonCounter/buttonCounter';
+import {React} from 'react';
+import {Grid} from 'semantic-ui-react';
+import Item from '../Item/item';
+
+
 
 
   
-  export default function CardExampleCardProps () {
-
-    const [items,setItems] = useState([]);
-
-    useEffect(() => {
-        fetch('https://fakestoreapi.com/products?limit=5')
-            .then(res=>res.json())
-            .then(items=>setItems(items))
-      });
-
-
-
-
-
-      const extra = (
-        <a>
-        <ButtonExampleConditionalsCustom  />
-        </a>
-    )
-
-
-
+  export default function ItemList ({items}) {
+            
     return(
+        
         <div>
             <Grid container columns={3}>
-            {items.map((items,idx) =>{
+            {items.map((item,idx) =>{
 
                 return(
 
                     <Grid.Column>
-                        <Card
-                            image= {items.image}
-                            header={items.title}
-                            meta= {items.category}
-                            description={items.description} 
-                            extra={extra}
+                        <Item 
+                            item={item}
+                            key={idx}
                         />
+
+                        
                     </Grid.Column>
 
                 )

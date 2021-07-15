@@ -8,7 +8,9 @@ class NavBar extends Component{
     render() {
         return (
                 <nav className="navBarItems">
-                    <h1 className="navBarLogo"><i className="fas fa-biohazard"></i> Ave Cesar Shop</h1>
+                    <a href="/"> 
+                        <h1 className="navBarLogo"><i className="fas fa-biohazard"></i> Ave Cesar Shop</h1>
+                    </a>
                     <div className="menuIcon">
                         <i className='fas fa-times'></i>
                     </div>

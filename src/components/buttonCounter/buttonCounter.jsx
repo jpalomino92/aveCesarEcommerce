@@ -1,8 +1,9 @@
 import {React,useState } from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button ,Icon} from 'semantic-ui-react';
 
 
-export default function ButtonExampleConditionalsCustom () {
+export default function ButtonCounter ({onAdd}) {
+
   const [quantity,setQuantity] = useState(0);
 
   const handleIncrement = function(){
@@ -21,11 +22,23 @@ export default function ButtonExampleConditionalsCustom () {
 
 
   return(
-  <Button.Group>
-    <Button onClick={handleIncrement}>+</Button>
-    <Button.Or text={quantity} />
-    <Button positive onClick={handleDecrement}>-</Button>
-  </Button.Group>
+    <div>
+      <Button animated='vertical' onClick={()=> onAdd(quantity)}>
+        <Button.Content hidden >Buy</Button.Content>
+        <Button.Content visible>
+          <Icon name='shop' />
+        </Button.Content>
+      </Button>
+
+    <Button.Group>
+      <Button positive onClick={handleDecrement}>-</Button>
+      <Button.Or text={quantity} />
+      <Button onClick={handleIncrement}>+</Button>
+      
+      
+    </Button.Group>
+
+    </div>
   )
 }
 
