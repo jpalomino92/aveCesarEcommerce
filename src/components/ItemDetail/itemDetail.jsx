@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card} from 'semantic-ui-react';
+import {Card, Grid} from 'semantic-ui-react';
 import ButtonCounter from '../buttonCounter/buttonCounter';
 
 
@@ -17,12 +17,17 @@ export default function ItemDetail({OnlyItem}) {
 
         <div>
 
-            <Card
-                image= {image}
-                header={title}
-                meta= {category}
-                extra={extra}
-            />
+            <Grid centered  columns={4}>
+                <Grid.Column>
+                    <Card
+                        image= {image}
+                        header={title}
+                        meta= {category}
+                        extra={extra}
+                    />
+                </Grid.Column>
+            </Grid>
+
 
                     
         </div>
