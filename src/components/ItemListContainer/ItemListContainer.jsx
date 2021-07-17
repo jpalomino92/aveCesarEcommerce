@@ -9,13 +9,11 @@ export const ItemListContainer = () => {
     const [items,setItems] = useState([]);
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products?limit=7')
+        fetch('https://fakestoreapi.com/products?limit=15')
             .then(res=>res.json())
             .then(items=>setItems(items))
       },[]);
  
-
-
     return (
             <div id = 'ItemListContainer'>
                 <ItemList items={items}  />

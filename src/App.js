@@ -16,6 +16,8 @@ import  ContactUs  from './Views/ContactUs/contactUs';
 import  ItemDetailView  from './Views/ItemDetailView/itemDetailView';
 import  Products  from './Views/Products/products';
 import  Services  from './Views/Services/services';
+import  CategoryView from './Views/Category/CategoryView';
+
 
 
 const head = "Ave Cesar Ecommerce";
@@ -33,10 +35,15 @@ class App extends React.Component{
           <Route path="/Services/services">
             
           </Route>
-          <Route path="/category/:categoryName">       
-            </Route>
-          <Route path="/Products/:id">            
+          <Route path="/category/:categoryName">  
+
+            <CategoryView /> 
+
+          </Route>
+          <Route path="/Products/:id">      
+
           <ItemDetailView />
+
           </Route>
 
           <Route path="/ContactUs/contactUs">
