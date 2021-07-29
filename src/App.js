@@ -10,14 +10,15 @@ import './App.css';
 //components
 import NavBar from './components/NavBar/NavBar';
 
+
 //Views
 import  Home  from './Views/Home/home';
 import  ContactUs  from './Views/ContactUs/contactUs';
 import  ItemDetailView  from './Views/ItemDetailView/itemDetailView';
 import  Products  from './Views/Products/products';
 import  Services  from './Views/Services/services';
-import  CategoryView from './Views/Category/CategoryView';
-
+import  CartProvider from './context/cartContext'
+import  Cart from './components/Cart/cart';
 
 
 const head = "Ave Cesar Ecommerce";
@@ -27,29 +28,39 @@ class App extends React.Component{
   render(){
     return (
       <Router>
-        <NavBar />
-        <Switch>
-          <Route exact path="/"> 
-            <Home />
-          </Route>
-          <Route path="/Services/services">
-            
-          </Route>
-          <Route path="/category/:categoryName">  
+        <CartProvider>
 
-            <CategoryView /> 
+          <NavBar />
 
-          </Route>
-          <Route path="/Products/:id">      
+          <Switch>
 
-          <ItemDetailView />
+            <Route exact path="/"> 
+              <Home />
+            </Route>
 
-          </Route>
+            <Route path="/Services">
+            <h1>servicios</h1>
+            </Route>
 
-          <Route path="/ContactUs/contactUs">
+            <Route path="/category/:categoryName">  
+              <Home />
+            </Route>
 
-          </Route>
-        </Switch>
+            <Route path="/Products/:id">      
+            <ItemDetailView />
+            </Route>
+
+            <Route path="/ContactUs">
+              <h1> Contact us </h1>
+            </Route>
+
+            <Route path="/cart">
+              <Cart />
+            </Route>
+
+          </Switch>
+
+        </CartProvider>
      
               
       </Router>

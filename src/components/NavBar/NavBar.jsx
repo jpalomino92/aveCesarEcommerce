@@ -1,14 +1,15 @@
-import {React,useState, useEffect,Component } from 'react';
+import React,{useState, useEffect,Component,useContext } from 'react';
 import './NavBar.css';
 import {MenuItems} from './MenuItems';
 import CartWidget from '../CartWidget/CartWidget';
 import NavBarDropDown from '../NarVarDropDown/NavBarDropDown';
-
+import { Link } from '@material-ui/core';
 
 
 function NavBar() {
 
     const [items,setItems] = useState([]);
+
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products?limit=15')
@@ -51,7 +52,8 @@ function NavBar() {
                                 
                         )
                     })}
-                    <CartWidget/>
+                    
+                    <CartWidget route= {`/Cart`}/>
 
                 </ul>
                 

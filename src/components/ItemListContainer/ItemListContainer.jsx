@@ -1,4 +1,5 @@
 import {React,useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import './ItemListContainer.css';
 import ItemList from '../itemList/itemList';
 
@@ -7,11 +8,24 @@ import ItemList from '../itemList/itemList';
 export const ItemListContainer = () => {
 
     const [items,setItems] = useState([]);
+    const {categoryName} = useParams()
+
+
+
 
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products?limit=15')
+        
+        if (typeof categoryName != "undefined") {
+            fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
             .then(res=>res.json())
-            .then(items=>setItems(items))
+            .then(items=>setItems(items))       
+        
+        } else {
+            fetch('https://fakestoreapi.com/products?limit=15')
+                .then(res=>res.json())
+                .then(items=>setItems(items))
+        }
+            
       },[]);
  
     return (

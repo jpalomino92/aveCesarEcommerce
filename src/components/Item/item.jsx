@@ -1,26 +1,33 @@
-import React ,{useState}from 'react'; 
+import React ,{useState,useContext}from 'react'; 
 import { Link } from 'react-router-dom';
 import {Card, Grid} from 'semantic-ui-react';
 import ButtonCounter from '../buttonCounter/buttonCounter';
+import { CartContext } from '../../context/cartContext';
 
 
 
 function Item({item,key,detail}) {
 
     const  {image,title,category,id} = item
+    const {addItem} = useContext(CartContext)
     const [cantidad, setCantidad] = useState(0)
+
+
+
+
+
     
     const onAdd = (quantity) => {
-        setCantidad(quantity);
+        setCantidad(quantity)
+        addItem(item,cantidad)
+
     } 
 
-    const extra = (
-        <a>
-        <ButtonCounter  onAdd={onAdd}/>
-        </a>
-    )
+  
+    
 
     return (
+
         <div >
             <Link to = {`/Products/${id}`} >
                 <Card
