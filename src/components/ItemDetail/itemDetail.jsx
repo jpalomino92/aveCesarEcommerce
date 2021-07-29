@@ -1,9 +1,9 @@
 import React ,{useState,useContext}from 'react'; 
 import {Grid,Image,Container} from 'semantic-ui-react';
-
 import ButtonCounter from '../buttonCounter/buttonCounter';
 import { CartContext } from '../../context/cartContext';
 import ButtonCart from '../buttonGoToCart/buttonGoToCart';
+import './itemDetail.css'
 
 
 export default function ItemDetail({OnlyItem}) {
@@ -50,26 +50,25 @@ export default function ItemDetail({OnlyItem}) {
 
     return (
 
-        <div>
-            <Container textAlign='center'>
+        <div className="ItemGrid">
+               <div className="imageContainer">
+                    <img src={image} className="itemDetailImage"/>
+                </div>
 
-                    <Grid centered  columns={4}>
-                        <Grid.Column width={4}>
-                            <Image src={image} />
-                        </Grid.Column>
-                        <Grid.Column width={9}>
-                        {description}
-                        </Grid.Column>
-                        <Grid.Column width={3}>
-                            {extra}
-                        </Grid.Column>
-                    </Grid>
+                <div className="descriptionContainer">
+                    <div>
+                        <h1 className="itemDetailTitle">
+                                {title}
+                        </h1>   
+                        <p>                    
+                            {description}
+                        </p>                
+                    </div>
+                </div>
 
-
-            </Container>
-
-
-                    
+                <div className="buttonContainer">
+                    {extra}
+                </div>        
         </div>
     )
 }
