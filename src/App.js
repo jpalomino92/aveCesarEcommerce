@@ -54,7 +54,7 @@ class App extends React.Component{
               <h1> Contact us </h1>
             </Route>
 
-            <Route path="/cart">
+            <Route path="/Cart">
               <Cart />
             </Route>
 
